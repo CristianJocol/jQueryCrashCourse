@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery Crash Course / Practice | Selectors</title>
+    <link href="style.css" rel="stylesheet" />
+    <!--ADD jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>jQuery Crash Course</h1>
+    </header>
+    <div id="container">
+        <h1 id="heading1">Heading One</h1>
+        <p id="para1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque mollis euismod nulla, malesuada consequat tellus
+            aliquet et. Mauris tellus dolor, tristique vitae tristique
+            eget, pharetra imperdiet nibh. Morbi vehicula libero quis
+            volutpat lacinia. Ut in dui et urna venenatis <span>
+                sodales eget
+                sed purus. Ut iaculis vestibulum mi sit amet auctor.
+            </span> Quisque
+            porttitor, sapien quis vehicula congue, odio lacus accumsan
+            turpis, sit amet volutpat ex justo ac ipsum.
+        </p>
+
+        <h1 class="heading2">Heading Two</h1>
+        <p class="para2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque mollis euismod nulla, malesuada consequat tellus
+            aliquet et. Mauris tellus dolor, tristique vitae tristique
+            eget, pharetra imperdiet nibh. Morbi vehicula libero quis
+            volutpat lacinia. Ut in dui et urna venenatis <span>
+                sodales eget
+                sed purus. Ut iaculis vestibulum mi sit amet auctor.
+            </span> Quisque
+            porttitor, sapien quis vehicula congue, odio lacus accumsan
+            turpis, sit amet volutpat ex justo ac ipsum.
+        </p>
+
+        <ul id="list">
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+            <li>List Item 5</li>
+        </ul>
+
+        <input type="button" name="Button1" value="Button 1" />
+        <input type="submit" name="sub1" value="Button 1" />
+        <input type="text" name="txt1"/>
+
+        <a href="http://google.com">Google</a>
+        <a href="http://yahoo.com">Yahoo</a>
+    </div>
+
+    <!--JAVASCRIPT / jQuery-->
+    <!--Selectors:-->
+    <script>
+        //Selector to grab all headings using jQuery
+        //$('h1').hide();
+        //$('h1#heading1').hide();
+        //$('h1.heading2').hide();
+
+        $('p span').css('color', 'red');
+
+        $('ul#list li:first').css('color', 'blue');
+        $('ul#list li:last').css('color', 'green');
+        $('ul#list li:even').css('background-color', 'yellow');
+        $('ul#list li:odd').css('background-color', '#00a0a0');
+        //Select every third item (it could be any item really)
+        $('ul#list li:nth-child(3n)').css('list-style', 'none');
+
+        //Grabbing inputs
+        //$(':button').hide();
+        $(':button').css('border-radius', '60%');
+        $(':submit').css('border-radius', '60%');
+        $(':button').css('font-size', '15px');
+        $(':submit').css('font-size', '15px');
+        $(':text').css('font-size', '15px');
+        $(':button, :submit, :text').css('color', 'blue');
+
+        //Grabbing attributes
+        $('a').css('text-decoration', 'none');
+        $('a').css('font-size', '18px');
+        $('a').css('font-family', 'Arial');
+        $('[href]').css('color', 'red');
+        $('a[href="http://yahoo.com"]').css('color', 'green');
+    </script>
+</body>
+</html>
